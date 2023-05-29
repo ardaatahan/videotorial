@@ -13,9 +13,10 @@ app.use(cors());
 app.post('/upload', upload.single('video'), async (req, res) => {
   const videoFile = req.file; // Access the uploaded video file from req.file
 
+  console.log(videoFile);
   try {
     // Perform video analysis using videoIntelligence.js
-    const videoLabels = await videoIntelligence.analyzeVideo(videoFile.buffer);
+    const videoLabels = await videoIntelligence.analyzeVideo(videoFile.buffer.toString('base64'));
 
     // Perform translation using translate.js
     //const translatedLabels = await translate.translateLabels(videoLabels);
@@ -25,6 +26,8 @@ app.post('/upload', upload.single('video'), async (req, res) => {
       videoJSON: videoLabels
       //translateJSON: translatedLabels,
     };
+
+    console.log(response);
 
     // Send the response back to the frontend
     res.json(response);
