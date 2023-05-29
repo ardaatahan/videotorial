@@ -1,4 +1,4 @@
-const { Translate } = require('@google-cloud/translate');
+const { Translate } = require('@google-cloud/translate').v2;
 
 // Create an instance of the Translation API client
 const translate = new Translate();
