@@ -25,7 +25,6 @@
         gtag('config', 'G-N80GH8KX9W', { client_storage: 'none' });
     </script>
 
-
     <style>
         body {
             text-align: center;
@@ -41,7 +40,7 @@
             color: #5d5d5d;
         }
 
-        #video-conatiner {
+        #video-container {
 
             position: relative;
             width: 800px;
@@ -49,7 +48,7 @@
             display: inline-block;
         }
 
-        #video-conatiner>canvas {
+        #video-container>canvas {
             width: 100%;
             position: absolute;
             opacity: 0.8;
@@ -160,7 +159,7 @@
             </div>
         </header>
 
-        <div id="video-conatiner">
+        <div id="video-container">
             <canvas id="my_canvas" width="800" height="500"></canvas>
             <video id="video" controls autoplay></video>
         </div>
@@ -300,8 +299,6 @@
                 set_current_view: function (new_view) {
                     this.current_view = new_view
                     router.push({ hash: '#' + new_view })
-
-
                 }
             },
             computed: {
