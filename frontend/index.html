@@ -353,6 +353,20 @@
             const file = this.files[0]
             const file_url = URL.createObjectURL(file)
             load_video_from_url(file_url)
+            const form_data = new FormData()
+            console.log("hello")
+            form_data.append('video', file);
+            fetch('/upload', {
+                method: 'POST',
+                body: form_data
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                })
+                .catch(error => {
+                    console.error(error)
+                })
         }
 
         function load_json_from_url(url) {
@@ -380,9 +394,6 @@ Find links to script examples at the top right of the screen.")
 
                 json_input.value = null
             }
-
-
-
         }
 
         function load_json_dragged(event) {
@@ -402,6 +413,21 @@ Find links to script examples at the top right of the screen.")
             app.video_length.duration
             app.video_info.height = 500
             app.video_info.width = 800
+            const file = this.files[0]
+            const form_data = new FormData()
+            console.log("hello")
+            form_data.append('video', file);
+            fetch('/uploadz', {
+                method: 'POST',
+                body: form_data
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                })
+                .catch(error => {
+                    console.error(error)
+                })
         }
 
         function drag_enter(ev) {
@@ -409,6 +435,7 @@ Find links to script examples at the top right of the screen.")
         }
 
         function drop_video(ev) {
+            console.log("hello drop video")
             ev.preventDefault()
             video_input.files = ev.dataTransfer.files
             video_input.dispatchEvent(new Event('change'))
