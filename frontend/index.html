@@ -356,7 +356,7 @@
             const form_data = new FormData()
             console.log("hello")
             form_data.append('video', file);
-            fetch('/upload', {
+            fetch('http://localhost:3000/upload', {
                 method: 'POST',
                 body: form_data
             })
@@ -413,21 +413,6 @@ Find links to script examples at the top right of the screen.")
             app.video_length.duration
             app.video_info.height = 500
             app.video_info.width = 800
-            const file = this.files[0]
-            const form_data = new FormData()
-            console.log("hello")
-            form_data.append('video', file);
-            fetch('/uploadz', {
-                method: 'POST',
-                body: form_data
-            })
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data)
-                })
-                .catch(error => {
-                    console.error(error)
-                })
         }
 
         function drag_enter(ev) {
