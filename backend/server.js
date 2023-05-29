@@ -1,10 +1,14 @@
 const express = require('express');
 const multer = require('multer');
+const cors = require('cors');
 const videoIntelligence = require('./VideoIntelligence');
 const translate = require('./Translate');
 
 const app = express();
 const upload = multer();
+
+// Enable CORS for all routes
+app.use(cors());
 
 app.post('/upload', upload.single('video'), async (req, res) => {
   const videoFile = req.file; // Access the uploaded video file from req.file
