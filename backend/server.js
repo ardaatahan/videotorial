@@ -18,7 +18,7 @@ app.post('/upload', upload.single('video'), async (req, res) => {
     const videoLabels = await videoIntelligence.analyzeVideo(videoFile.buffer);
 
     // Perform translation using translate.js
-    //const translatedLabels = await translate.translateLabels(videoLabels);
+    //const translatedLabels = await translate.translateLabels(videoLabels, targetLanguage);
 
     // Prepare the response data
     const response = {
