@@ -1,7 +1,7 @@
 const express = require('express');
 const multer = require('multer');
-const videoIntelligence = require('./videoIntelligence');
-const translate = require('./translate');
+const videoIntelligence = require('./VideoIntelligence');
+const translate = require('./Translate');
 
 const app = express();
 const upload = multer();
