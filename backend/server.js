@@ -1,7 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const cors = require('cors');
-const videoIntelligence = require('./VideoIntelligence');
+const videoAnalysis = require('./VideoAnalysis');
 const translate = require('./Translate');
 
 const app = express();
@@ -16,14 +16,15 @@ app.post('/upload', upload.single('video'), async (req, res) => {
   console.log(videoFile);
   try {
     // Perform video analysis using videoIntelligence.js
-    const videoLabels = await videoIntelligence.analyzeVideo(videoFile.buffer.toString('base64'));
+    const videoResult = await videoAnalysis.analyzeVideo(videoFile.buffer.toString('base64'));
 
+    // now put videoResult into LabelDetection part
     // Perform translation using translate.js
     //const translatedLabels = await translate.translateLabels(videoLabels, targetLanguage);
 
     // Prepare the response data
     const response = {
-      videoJSON: videoLabels
+      videoJSON: videoResult
       //translateJSON: translatedLabels,
     };
 

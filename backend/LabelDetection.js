@@ -7,7 +7,7 @@ const videoClient = new VideoIntelligenceServiceClient();
 async function analyzeVideo(videoContent) {
   const request = {
     inputContent: videoContent,
-    features: ['LABEL_DETECTION'],
+    features: ['LABEL_DETECTION', 'SPEECH_TRANSCRIPTION']
   };
 
   console.log("analyzing...");
@@ -16,9 +16,16 @@ async function analyzeVideo(videoContent) {
   const [response] = await operation.promise();
   console.log("analyze completed.");
   console.log("repsonse", response);
+  return response;
 
-  const annotations = response.annotationResults[0];
-  
+  if (!response.annotationResults)
+    return []
+
+  for (let index = 0; index < response.annotationResults.length; index++) {
+    if ('shotLabelAnnotations' in response.annotationResults[index])
+        return response.annotationResults[index].shotLabelAnnotations
+  }
+  return []
 
   const labels = annotations.shotLabelAnnotations;
   labels.forEach(label => {
