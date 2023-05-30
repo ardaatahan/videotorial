@@ -24,17 +24,19 @@ async function analyzeVideo(videoContent) {
   console.log("analyze completed.");
   console.log("response", response);
 
-  const speech = ""
+  let transcriptString = '';
   for (let index = 0; index < response.annotationResults.length; index++) {
     if ('speechTranscriptions' in response.annotationResults[index])
-        speech = response.annotationResults[index].speechTranscriptions
+        var speech = response.annotationResults[index].speechTranscriptions
+        for (const transcription of speech) {
+            for (const alternative of transcription.alternatives) {
+              //console.log(alternative.transcript, " ");
+              transcriptString += alternative.transcript + ' ';
+            }
+        }
   }
-
-  for (const transcription of speech) {
-    for (const alternative of transcription.alternatives) {
-      console.log(alternative.transcript, " ");
-    }
-  }
+  // we should put the text into translation api here.
+  console.log("Transcript: ", transcriptString);
 
   return response;
 }

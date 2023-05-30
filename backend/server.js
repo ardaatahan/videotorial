@@ -2,7 +2,7 @@ const express = require('express');
 const multer = require('multer');
 const cors = require('cors');
 const videoAnalysis = require('./VideoAnalysis');
-const translate = require('./Translate');
+const { translateText } = require('./translate');
 
 const app = express();
 const upload = multer();
@@ -29,8 +29,11 @@ app.post('/upload', upload.single('video'), async (req, res) => {
     };
 
     console.log(response);
-    console.log(videoResult.annotationResults[1].error);
 
+    const inputText = 'Hello, how are you?';
+    const targetLanguage = 'es';
+    
+    translateText(inputText, targetLanguage);
     // Send the response back to the frontend
     res.json(response);
   } catch (error) {
