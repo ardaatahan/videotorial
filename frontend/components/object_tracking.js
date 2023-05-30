@@ -100,12 +100,12 @@ Vue.component('object-tracking-viz', {
             Extract just the object tracking data from json
             `
 
-            if (!this.json_data.annotation_results)
+            if (!this.json_data || !this.json_data.videoJSON || !this.json_data.videoJSON.annotationResults)
                 return []
 
-            for (let index = 0; index < this.json_data.annotation_results.length; index++) {
-                if ('object_annotations' in this.json_data.annotation_results[index])
-                    return this.json_data.annotation_results[index].object_annotations
+            for (let index = 0; index < this.json_data.videoJSON.annotationResults.length; index++) {
+                if ('objectAnnotations' in this.json_data.videoJSON.annotationResults[index])
+                    return this.json_data.videoJSON.annotationResults[index].objectAnnotations
             }
             return []
         },
@@ -170,8 +170,7 @@ Vue.component('object-tracking-viz', {
         }
     },
     template: `
-    <div calss="object-tracking-container">
-
+    <div class="object-tracking-container">
         <div class="confidence">
             <span>Confidence threshold</span>
             <input type="range" min="0.0" max="1" value="0.5" step="0.01" v-model="confidence_threshold">
@@ -229,18 +228,18 @@ class Object_Track {
 
         this.frames = []
 
-        json_data.frames.forEach(frame => {
-            const new_frame = {
-                'box': {
-                    'x': (frame.normalized_bounding_box.left || 0) * video_width,
-                    'y': (frame.normalized_bounding_box.top || 0) * video_height,
-                    'width': ((frame.normalized_bounding_box.right || 0) - (frame.normalized_bounding_box.left || 0)) * video_width,
-                    'height': ((frame.normalized_bounding_box.bottom || 0) - (frame.normalized_bounding_box.top || 0)) * video_height
-                },
-                'time_offset': nullable_time_offset_to_seconds(frame.time_offset)
-            }
-            this.frames.push(new_frame)
-        })
+        // json_data.frames.forEach(frame => {
+        //     const new_frame = {
+        //         'box': {
+        //             'x': (frame.normalized_bounding_box.left || 0) * video_width,
+        //             'y': (frame.normalized_bounding_box.top || 0) * video_height,
+        //             'width': ((frame.normalized_bounding_box.right || 0) - (frame.normalized_bounding_box.left || 0)) * video_width,
+        //             'height': ((frame.normalized_bounding_box.bottom || 0) - (frame.normalized_bounding_box.top || 0)) * video_height
+        //         },
+        //         'time_offset': nullable_time_offset_to_seconds(frame.time_offset)
+        //     }
+        //     this.frames.push(new_frame)
+        // })
     }
 
     has_frames_for_time(seconds) {
