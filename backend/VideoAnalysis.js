@@ -7,7 +7,7 @@ const videoClient = new VideoIntelligenceServiceClient();
 async function analyzeVideo(videoContent) {
   const request = {
     inputContent: videoContent,
-    features: ['LABEL_DETECTION', 'SPEECH_TRANSCRIPTION']
+    features: ['LABEL_DETECTION', 'SPEECH_TRANSCRIPTION', 'OBJECT_TRACKING']
   };
 
   console.log("analyzing...");
