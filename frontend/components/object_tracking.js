@@ -171,6 +171,7 @@ Vue.component('object-tracking-viz', {
     },
     template: `
     <div class="object-tracking-container">
+        <p>{{object_track_segments}}</p>
         <div class="confidence">
             <span>Confidence threshold</span>
             <input type="range" min="0.0" max="1" value="0.5" step="0.01" v-model="confidence_threshold">
@@ -222,8 +223,8 @@ Vue.component('object-tracking-viz', {
 class Object_Track {
     constructor(json_data, video_height, video_width) {
         this.name = json_data.entity.description
-        this.start_time = nullable_time_offset_to_seconds(json_data.segment.start_time_offset)
-        this.end_time = nullable_time_offset_to_seconds(json_data.segment.end_time_offset)
+        this.start_time = nullable_time_offset_to_seconds(json_data.segment.startTimeOffset)
+        this.end_time = nullable_time_offset_to_seconds(json_data.segment.endTimeOffset)
         this.confidence = json_data.confidence
 
         this.frames = []
