@@ -1,0 +1,15 @@
+runtime: nodejs16
+
+handlers:
+  - url: /utils
+    static_dir: utils
+  - url: /assets
+    static_dir: assets
+  - url: /components
+    static_dir: components
+  - url: /(.*\.(js|css|png|jpg|ico))$
+    static_files: \1
+    upload: .*\.(js|css|png|jpg|ico)$
+  - url: /.*
+    static_files: index.html
+    upload: index.html
