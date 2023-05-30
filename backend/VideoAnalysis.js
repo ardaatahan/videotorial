@@ -5,17 +5,23 @@ const videoClient = new VideoIntelligenceServiceClient();
 
 // Analyzes the video using the Video Intelligence API
 async function analyzeVideo(videoContent) {
-  const request = {
-    inputContent: videoContent,
-    features: ['LABEL_DETECTION', 'SPEECH_TRANSCRIPTION', 'OBJECT_TRACKING']
-  };
+    // Construct request for video analysis
+    const request = {
+        inputContent: videoContent,
+        features: ['LABEL_DETECTION', 'SPEECH_TRANSCRIPTION', 'OBJECT_TRACKING'],
+        videoContext: {
+          speechTranscriptionConfig: {
+            languageCode: 'en-US',
+          },
+        },
+      };
 
   console.log("analyzing...");
   const [operation] = await videoClient.annotateVideo(request);
   console.log('Waiting for operation to complete...');
   const [response] = await operation.promise();
   console.log("analyze completed.");
-  console.log("repsonse", response);
+  console.log("response", response);
   return response;
 
   if (!response.annotationResults)

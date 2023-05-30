@@ -29,7 +29,7 @@ app.post('/upload', upload.single('video'), async (req, res) => {
     };
 
     console.log(response);
-    console.log(response)
+    console.log(videoResult.annotationResults[1].error);
 
     // Send the response back to the frontend
     res.json(response);
