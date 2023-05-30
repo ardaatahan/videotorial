@@ -1,0 +1,9 @@
+runtime: nodejs16
+service: videotorial-backend
+
+env_variables:
+  # Add any environment variables required by your backend
+
+handlers:
+  - url: /.*
+    script: auto

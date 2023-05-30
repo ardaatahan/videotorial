@@ -8,10 +8,11 @@ async function analyzeVideo(videoContent) {
     // Construct request for video analysis
     const request = {
         inputContent: videoContent,
-        features: ['LABEL_DETECTION', 'SPEECH_TRANSCRIPTION', 'OBJECT_TRACKING'],
+        features: ['SPEECH_TRANSCRIPTION', 'OBJECT_TRACKING'],
         videoContext: {
           speechTranscriptionConfig: {
             languageCode: 'en-US',
+            enableAutomaticPunctuation: true
           },
         },
       };
@@ -22,46 +23,20 @@ async function analyzeVideo(videoContent) {
   const [response] = await operation.promise();
   console.log("analyze completed.");
   console.log("response", response);
-  return response;
 
-  if (!response.annotationResults)
-    return []
-
+  const speech = ""
   for (let index = 0; index < response.annotationResults.length; index++) {
-    if ('shotLabelAnnotations' in response.annotationResults[index])
-        return response.annotationResults[index].shotLabelAnnotations
+    if ('speechTranscriptions' in response.annotationResults[index])
+        speech = response.annotationResults[index].speechTranscriptions
   }
-  return []
 
-  const labels = annotations.shotLabelAnnotations;
-  labels.forEach(label => {
-    console.log(`Label ${label.entity.description} occurs at:`);
-    label.segments.forEach(segment => {
-      const time = segment.segment;
-      if (time.startTimeOffset.seconds === undefined) {
-        time.startTimeOffset.seconds = 0;
-      }
-      if (time.startTimeOffset.nanos === undefined) {
-        time.startTimeOffset.nanos = 0;
-      }
-      if (time.endTimeOffset.seconds === undefined) {
-        time.endTimeOffset.seconds = 0;
-      }
-      if (time.endTimeOffset.nanos === undefined) {
-        time.endTimeOffset.nanos = 0;
-      }
-      console.log(
-        `\tStart: ${time.startTimeOffset.seconds}` +
-          `.${(time.startTimeOffset.nanos / 1e6).toFixed(0)}s`
-      );
-      console.log(
-        `\tEnd: ${time.endTimeOffset.seconds}.` +
-          `${(time.endTimeOffset.nanos / 1e6).toFixed(0)}s`
-      );
-      console.log(`\tConfidence: ${segment.confidence}`);
-    });
-  });
-return labels;
+  for (const transcription of speech) {
+    for (const alternative of transcription.alternatives) {
+      console.log(alternative.transcript, " ");
+    }
+  }
+
+  return response;
 }
 
 module.exports = {
