@@ -194,7 +194,8 @@ Vue.component('object-tracking-viz', {
         </transition-group>
     </div>
     `,
-    mounted: function () {
+
+     mounted: function () {
         console.log('mounted component')
         var canvas = document.getElementById("my_canvas")
         this.ctx = canvas.getContext("2d")
@@ -294,5 +295,5 @@ class Object_Track {
             return this.most_recent_interpolated_bounding_box(seconds)
         else
             return this.most_recent_real_bounding_box(seconds)
-    }
+    } 
 }
