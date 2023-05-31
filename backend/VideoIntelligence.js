@@ -23,7 +23,7 @@ async function analyzeVideo(videoContent) {
 
   for (let index = 0; index < response.annotationResults.length; index++) {
     if ('shotLabelAnnotations' in response.annotationResults[index])
-        return response.annotationResults[index].shotLabelAnnotations
+      return response.annotationResults[index].shotLabelAnnotations
   }
   return []
 
@@ -46,16 +46,16 @@ async function analyzeVideo(videoContent) {
       }
       console.log(
         `\tStart: ${time.startTimeOffset.seconds}` +
-          `.${(time.startTimeOffset.nanos / 1e6).toFixed(0)}s`
+        `.${(time.startTimeOffset.nanos / 1e6).toFixed(0)}s`
       );
       console.log(
         `\tEnd: ${time.endTimeOffset.seconds}.` +
-          `${(time.endTimeOffset.nanos / 1e6).toFixed(0)}s`
+        `${(time.endTimeOffset.nanos / 1e6).toFixed(0)}s`
       );
       console.log(`\tConfidence: ${segment.confidence}`);
     });
   });
-return labels;
+  return labels;
 }
 
 module.exports = {
