@@ -43,7 +43,7 @@ Vue.component('speech-transcription-viz', {
             `
             Extract just the speech transcriptions data from json
             `
-            if (!this.json_data || !this.json_data.translatedText || !this.json_data.translatedText)
+            if (!this.json_data || !this.json_data.translatedText)
                 return ""
 
             return this.json_data.translatedText

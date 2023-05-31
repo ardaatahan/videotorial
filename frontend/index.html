@@ -170,6 +170,7 @@
         .content-container {
             flex: 1;
             display: flex;
+            width: 1600px;
             /* overflow: hidden; */
         }
 
@@ -226,6 +227,29 @@
         .custom-file-upload:hover {
             background-color: #5C6BC0;
         }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+          }
+          
+          .dropdown select {
+            padding: 8px 16px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #333;
+            outline: none;
+            appearance: none;
+          }
+          
+          .dropdown select:focus {
+            border-color: #888;
+          }
+          
+          .dropdown select option {
+            padding: 8px 16px;
+          }
     </style>
 </head>
 
@@ -265,10 +289,16 @@
                             <div class="file-input-container">
                                 <label for="video_input"
                                     class="custom-file-upload mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                                    Select Video
+                                    Upload Video
                                 </label>
                                 <input id="video_input" type="file" accept="video/*" style="display: none;" />
                             </div>
+                            <div class="dropdown">
+                                <select v-model="selectedLanguageCode">
+                                  <option value="" disabled>Select a language</option>
+                                  <option v-for="language in languageCodes" :value="language.code" :key="language.code">{{ language.label }}</option>
+                                </select>
+                              </div>
                         </div>
                     </div>
 
@@ -341,8 +371,6 @@
     <script src="components/explicit_content_detection.js"></script>
 
     <script>
-        // import jsonData from "./assets/test_json.json";
-
         function jump_video_to_time(time) {
             const video = document.querySelector('video')
             video.currentTime = time
@@ -392,6 +420,35 @@
             router,
             el: '#app',
             data: {
+                languageCodes: [
+                    { code: 'ar', label: 'Arabic' },
+                    { code: 'bg', label: 'Bulgarian' },
+                    { code: 'cs', label: 'Czech' },
+                    { code: 'da', label: 'Danish' },
+                    { code: 'de', label: 'German' },
+                    { code: 'el', label: 'Greek' },
+                    { code: 'en', label: 'English' },
+                    { code: 'es', label: 'Spanish' },
+                    { code: 'fr', label: 'French' },
+                    { code: 'ga', label: 'Irish' },
+                    { code: 'hy', label: 'Armenian' },
+                    { code: 'hu', label: 'Hungarian' },
+                    { code: 'it', label: 'Italian' },
+                    { code: 'ja', label: 'Japanese' },
+                    { code: 'ko', label: 'Korean' },
+                    { code: 'nl', label: 'Dutch' },
+                    { code: 'no', label: 'Norwegian' },
+                    { code: 'pl', label: 'Polish' },
+                    { code: 'pt-PT', label: 'Portuguese' },
+                    { code: 'ru', label: 'Russian' },
+                    { code: 'sk', label: 'Slovak' },
+                    { code: 'sl', label: 'Slovenian' },
+                    { code: 'sr', label: 'Serbian' },
+                    { code: 'sv', label: 'Swedish' },
+                    { code: 'tr', label: 'Turkish' },
+                    { code: 'uk', label: 'Ukranian' }
+                ],
+                selectedLanguageCode: '', // Initially set to an empty string
                 json_data: {},
                 video_info: { width: 800, height: 500, length: 252 },
                 video_length: 252,
@@ -421,8 +478,8 @@
                 data_misaligned: function () {
                     console.log('delt')
                     if (this.json_data)
-                        if (this.json_data.annotation_results) {
-                            const delta = this.video_info.length - this.json_data.annotation_results[0].segment.end_time_offset.seconds
+                        if (this.json_data.annotationResults) {
+                            const delta = this.video_info.length - this.json_data.annotationResults[0].segment.endTimeOffset.seconds
                             console.log('delt', delta)
                             if (Math.abs(delta) > 2) {
                                 return true
@@ -433,10 +490,10 @@
                 detected_features: function () {
                     var features = []
 
-                    if (!this.json_data.annotation_results)
+                    if (!this.json_data.annotationResults)
                         return features
 
-                    this.json_data.annotation_results.forEach(annotations => {
+                    this.json_data.annotationResults.forEach(annotations => {
                         console.log(Object.keys(annotations))
                         features = features.concat(Object.keys(annotations))
                     })
@@ -474,6 +531,7 @@
             const form_data = new FormData();
             console.log("hello");
             form_data.append('video', file);
+            form_data.append('language', app.selectedLanguageCode);
 
             var json = null;
             var originalContent = document.body.innerHTML;
