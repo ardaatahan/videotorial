@@ -2,7 +2,7 @@ const express = require('express');
 const multer = require('multer');
 const cors = require('cors');
 const videoAnalysis = require('./VideoAnalysis');
-const { translateText } = require('./translate');
+const { translateText } = require('./Translate');
 
 const app = express();
 const upload = multer();
@@ -14,8 +14,7 @@ app.post('/upload', upload.single('video'), async (req, res) => {
   const videoFile = req.file; // Access the uploaded video file from req.file
   const selectedLanguageCode = req.body.language; // Access the selected language code from req.body
 
-  console.log(selectedLanguageCode);
-  console.log(videoFile);
+  console.log("Video File: ", videoFile);
   try {
     // Perform video analysis using videoIntelligence.js
     const videoResult = await videoAnalysis.analyzeVideo(videoFile.buffer.toString('base64'));
@@ -24,23 +23,21 @@ app.post('/upload', upload.single('video'), async (req, res) => {
     for (let index = 0; index < videoResult.annotationResults.length; index++) {
       if ('speechTranscriptions' in videoResult.annotationResults[index])
         var speech = videoResult.annotationResults[index].speechTranscriptions;
-        for (const transcription of speech) {
-          for (const alternative of transcription.alternatives) {
-            transcriptString += alternative.transcript + ' ';
-          }
+      for (const transcription of speech) {
+        for (const alternative of transcription.alternatives) {
+          transcriptString += alternative.transcript + ' ';
         }
+      }
     }
 
-    console.log("transcript: ", transcriptString);
     var translatedText = ''
     // Translate the transcript string
     if (transcriptString) {
       // Translate the transcript string
-      const targetLanguage = selectedLanguageCode === '' ? 'tr': selectedLanguageCode;
-      console.log("target: ", targetLanguage);
+      const targetLanguage = selectedLanguageCode === '' ? 'tr' : selectedLanguageCode;
       translatedText = await translateText(transcriptString, targetLanguage);
     }
-    
+
     // Prepare the response data
     const response = {
       videoJSON: videoResult,
@@ -57,7 +54,7 @@ app.post('/upload', upload.single('video'), async (req, res) => {
   }
 });
 
-// Start the server
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}...`);
 });

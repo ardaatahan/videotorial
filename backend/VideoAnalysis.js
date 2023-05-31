@@ -22,7 +22,6 @@ async function analyzeVideo(videoContent) {
   console.log('Waiting for operation to complete...');
   const [response] = await operation.promise();
   console.log("analyze completed.");
-  console.log("response", response);
 
   let transcriptString = '';
   for (let index = 0; index < response.annotationResults.length; index++) {
@@ -35,8 +34,6 @@ async function analyzeVideo(videoContent) {
       }
     }
   }
-  // we should put the text into translation api here.
-  console.log("Transcript: ", transcriptString);
 
   return response;
 }
