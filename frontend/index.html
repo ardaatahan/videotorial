@@ -172,15 +172,6 @@
             flex: 1;
             display: flex;
             width: 1600px;
-            /* overflow: hidden; */
-        }
-
-        .sidebar {
-            width: 240px;
-            background-color: #FFFFFF;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            overflow-y: auto;
-            padding: 16px;
         }
 
         .content {
@@ -191,25 +182,6 @@
         .center {
             justify-content: center;
             align-items: center;
-        }
-
-        .sidebar-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #555555;
-            margin-bottom: 16px;
-        }
-
-        .sidebar-link {
-            font-size: 16px;
-            color: #555555;
-            margin-bottom: 8px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .sidebar-link:hover {
-            color: #3F51B5;
         }
 
         .upload-area {
@@ -271,18 +243,6 @@
         </header>
 
         <div class="content-container">
-            <!-- <div class="sidebar">
-                <div class="sidebar-title">Annotations</div>
-                <div class="sidebar-link" v-for="(id, title) in title_ids_dict" :key="id">
-                    <div class="nav-tab"
-                        :class="{ 'selected': current_view === title, 'disabled': !detected_features.includes(id) }"
-                        @click="set_current_view(title)">
-                        <span class="material-icons">check_circle</span>
-                        {{ title }}
-                    </div>
-                </div>
-            </div> -->
-
             <div class="content">
                 <main>
                     <div class="video-container">
@@ -330,53 +290,17 @@
                     v-bind:json_data="json_data" v-bind:video_info="video_info"
                     v-on:segment-clicked="jump_video"></object-tracking-viz>
 
-                <!-- <label-detection-viz v-if="current_view == 'Label Detection'" id="label_detection"
-                    v-bind:json_data="json_data" v-bind:video_info="video_info"
-                    v-on:segment-clicked="jump_video"></label-detection-viz>
-
-                <shot-detection-viz v-if="current_view == 'Shot Detection'" id="shot_detection"
-                    v-bind:json_data="json_data" v-bind:video_info="video_info"
-                    v-on:shot-clicked="jump_video"></shot-detection-viz> -->
-
                 <speech-transcription-viz v-if="current_view == 'Speech Transcription'" id="speech_transcription"
                     v-bind:json_data="json_data" v-bind:video_info="video_info" v-on:word-clicked="jump_video">
                 </speech-transcription-viz>
 
-                <!-- <person-detection-viz v-if="current_view == 'Person Detection'" id="person_detection"
-                    v-bind:json_data="json_data" v-bind:video_info="video_info" v-on:segment-clicked="jump_video">
-                </person-detection-viz>
-
-                <face-detection-viz v-if="current_view == 'Face Detection'" id="face_detection"
-                    v-bind:json_data="json_data" v-bind:video_info="video_info" v-on:segment-clicked="jump_video">
-                </face-detection-viz>
-
-                <logo-recognition-viz v-if="current_view == 'Logo Recognition'" id="logo_recognition"
-                    v-bind:json_data="json_data" v-bind:video_info="video_info" v-on:segment-clicked="jump_video">
-                </logo-recognition-viz>
-
-                <text-detection-viz v-if="current_view == 'Text Detection'" id="text_detection"
-                    v-bind:json_data="json_data" v-bind:video_info="video_info" v-on:segment-clicked="jump_video">
-                </text-detection-viz>
-
-                <explicit-content-detection-viz v-if="current_view == 'Explicit Content Detection'"
-                    id="explicit_content_detection" v-bind:json_data="json_data" v-bind:video_info="video_info"
-                    v-on:shot-clicked="jump_video">
-                </explicit-content-detection-viz> -->
-                <!-- <p>{{ json_data }}</p> -->
             </div>
         </div>
     </div>
 
     <script src="utils/utils.js"></script>
     <script src="components/object_tracking.js"></script>
-    <script src="components/label_detection.js"></script>
-    <script src="components/shot_detection.js"></script>
     <script src="components/speech_transcription.js"></script>
-    <script src="components/person_detection.js"></script>
-    <script src="components/face_detection.js"></script>
-    <script src="components/logo_recognition.js"></script>
-    <script src="components/text_detection.js"></script>
-    <script src="components/explicit_content_detection.js"></script>
 
     <script>
         function jump_video_to_time(time) {
@@ -421,7 +345,6 @@
 
         var router = new VueRouter({
             mode: 'history',
-            // routes: { path: '/match/:id', component: test_com}
         });
 
         var app = new Vue({
@@ -456,21 +379,14 @@
                     { code: 'tr', label: 'Turkish' },
                     { code: 'uk', label: 'Ukranian' }
                 ],
-                selectedLanguageCode: 'tr', // Initially set to an empty string
+                selectedLanguageCode: 'tr',
                 json_data: {},
                 video_info: { width: 800, height: 500, length: 252 },
                 video_length: 252,
-                current_view: 'Label Detection',
+                current_view: 'Object Tracking',
                 title_ids_dict: {
-                    // 'Label Detection': 'shot_label_annotations',
-                    // 'Shot Detection': 'shot_annotations',
                     'Object Tracking': 'object_annotations',
-                    // 'Person Detection': 'person_detection_annotations',
-                    // 'Face Detection': 'face_detection_annotations',
-                    // 'Logo Recognition': 'logo_recognition_annotations',
                     'Speech Transcription': 'speech_transcriptions',
-                    // 'Text Detection': 'text_annotations',
-                    // 'Explicit Content Detection': 'explicit_annotation'
                 }
             }, methods: {
                 jump_video: function (event_data) {
@@ -510,19 +426,6 @@
 
         const URL = window.URL || window.webkitURL
 
-        function fetch_json(url) {
-            var json = null
-            $.ajax({
-                'async': false,
-                'url': url,
-                'dataType': "json",
-                'success': function (data) {
-                    json = data
-                }
-            })
-            return json
-        }
-
         function load_video_from_url(url) {
             video.src = url
         }
@@ -559,51 +462,15 @@
             app.json_data = json_data
         }
 
-        function load_json_from_url(url) {
-            var json = null
-            $.ajax({
-                'async': false,
-                'url': url,
-                'dataType': "json",
-                'success': function (data) {
-                    json = data
-                }
-            })
-            json_data = json
-
-            app.json_data = json_data
-
-            // check validity of json
-            if (!('annotation_results' in json_data)) {
-                alert("❌ Format of json is not compatible, make sure you are setting the 'output_uri' \
-configuration when calling the Video Intelligence API so that it \
-outputs a .json file direction to Google Cloud Storage. \
-Find links to script examples at the top right of the screen.")
-
-                json_input.value = null
-            }
-        }
-
-        function load_json_dragged(event) {
-            const file = this.files[0]
-            const file_url = URL.createObjectURL(file)
-            load_json_from_url(file_url);
-        }
-
         var json_data = {}
         const video = document.getElementById('video')
         const video_input = document.getElementById('video_input')
-        const json_input = document.getElementById('json_input')
 
         video.oncanplay = function () {
             app.video_info.length = video.duration
             app.video_length.duration
             app.video_info.height = 500
             app.video_info.width = 800
-        }
-
-        function drag_enter(ev) {
-            ev.preventDefault()
         }
 
         function drop_video(ev) {
@@ -613,18 +480,7 @@ Find links to script examples at the top right of the screen.")
 
         }
 
-        function drop_json(ev) {
-            ev.preventDefault()
-            json_input.files = ev.dataTransfer.files
-            json_input.dispatchEvent(new Event('change'))
-        }
-
         video_input.addEventListener('change', load_video_dragged, false)
-        // json_input.addEventListener('change', load_json_dragged, false)
-
-        // load_json_from_url("assets/test_json.json")
-        // load_video_from_url("assets/test_video.mp4")
-
 
         if (app.$route.hash) {
             const hash_value = decodeURI(app.$route.hash.substring(1))
