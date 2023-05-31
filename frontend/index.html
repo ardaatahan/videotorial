@@ -359,7 +359,7 @@
         </div>
     </div>
 
-    <!--<script src="utils/utils.js"></script>-->
+    <script src="utils/utils.js"></script>
     <script src="components/object_tracking.js"></script>
     <script src="components/label_detection.js"></script>
     <script src="components/shot_detection.js"></script>
@@ -522,7 +522,7 @@
             video.src = url
         }
 
-        async function load_video_dragged(event) {
+        function load_video_dragged(event) {
             console.log("DRAGGED");
             const file = this.files[0];
             const file_url = URL.createObjectURL(file);
@@ -534,33 +534,27 @@
             form_data.append('language', app.selectedLanguageCode);
 
             var json = null;
-            var originalContent = document.body.innerHTML;
-            document.body.innerHTML = <img src="assets/loading.png"/>;
-            try {
-                const response = await fetch('http://localhost:3000/upload', {
+
+            $.ajax({
+                async: false,
+                url: 'http://localhost:3000/upload',
                 method: 'POST',
-                body: form_data,
-                });
-
-                // Throws an error if response is not ok
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                data: form_data,
+                processData: false,
+                contentType: false,
+                dataType: 'json',
+                success: function (data) {
+                    console.log("hi: ", data);
+                    json = data;
+                },
+                error: function (error) {
+                    console.error(error);
                 }
+            });
+            json_data = json
 
-                // Parses the response data as JSON
-                const data = await response.json();
-                console.log("hi: ", data);
-
-                document.body.innerHTML = originalContent;
-                //json_data = data;
-                
-                app.json_data = data;
-                console.log("json_data: ", app.json_data);
-                this.$forceUpdate();
-            } catch (error) {
-                console.error('There has been a problem with your fetch operation: ', error);
-                document.body.innerHTML = originalContent;
-            }   
+            console.log("json_data: ", json_data);
+            app.json_data = json_data
         }
 
         function load_json_from_url(url) {
