@@ -12,28 +12,43 @@ app.use(cors());
 
 app.post('/upload', upload.single('video'), async (req, res) => {
   const videoFile = req.file; // Access the uploaded video file from req.file
+  const selectedLanguageCode = req.body.language; // Access the selected language code from req.body
 
+  console.log(selectedLanguageCode);
   console.log(videoFile);
   try {
     // Perform video analysis using videoIntelligence.js
     const videoResult = await videoAnalysis.analyzeVideo(videoFile.buffer.toString('base64'));
 
-    // now put videoResult into LabelDetection part
-    // Perform translation using translate.js
-    //const translatedLabels = await translate.translateLabels(videoLabels, targetLanguage);
+    let transcriptString = '';
+    for (let index = 0; index < videoResult.annotationResults.length; index++) {
+      if ('speechTranscriptions' in videoResult.annotationResults[index])
+        var speech = videoResult.annotationResults[index].speechTranscriptions;
+        for (const transcription of speech) {
+          for (const alternative of transcription.alternatives) {
+            transcriptString += alternative.transcript + ' ';
+          }
+        }
+    }
 
+    console.log("transcript: ", transcriptString);
+    var translatedText = ''
+    // Translate the transcript string
+    if (transcriptString) {
+      // Translate the transcript string
+      const targetLanguage = selectedLanguageCode === '' ? 'tr': selectedLanguageCode;
+      console.log("target: ", targetLanguage);
+      translatedText = await translateText(transcriptString, targetLanguage);
+    }
+    
     // Prepare the response data
     const response = {
-      videoJSON: videoResult
-      //translateJSON: translatedLabels,
+      videoJSON: videoResult,
+      translatedText: translatedText,
     };
 
     console.log(response);
 
-    const inputText = 'Hello, how are you?';
-    const targetLanguage = 'es';
-    
-    translateText(inputText, targetLanguage);
     // Send the response back to the frontend
     res.json(response);
   } catch (error) {

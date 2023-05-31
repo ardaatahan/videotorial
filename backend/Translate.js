@@ -5,7 +5,7 @@ const translateText = async (text, targetLanguage) => {
 
   const [translation] = await translate.translate(text, targetLanguage);
 
-  console.log('Translated Text:', translation);
+  return translation;
 };
 
 module.exports = {
