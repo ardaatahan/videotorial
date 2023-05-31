@@ -45,7 +45,7 @@
         }
 
         header {
-            background-color: #3F51B5;
+            background-color: black;
             color: #FFFFFF;
             padding: 16px;
             display: flex;
@@ -53,8 +53,8 @@
         }
 
         .logo {
-            width: 64px;
-            height: 50px;
+            width: 150px;
+            height: 100px;
             margin-right: 8px;
         }
 
@@ -484,11 +484,9 @@
             },
             computed: {
                 data_misaligned: function () {
-                    console.log('delt')
                     if (this.json_data)
                         if (this.json_data.annotationResults) {
                             const delta = this.video_info.length - this.json_data.annotationResults[0].segment.endTimeOffset.seconds
-                            console.log('delt', delta)
                             if (Math.abs(delta) > 2) {
                                 return true
                             }
@@ -502,7 +500,6 @@
                         return features
 
                     this.json_data.annotationResults.forEach(annotations => {
-                        console.log(Object.keys(annotations))
                         features = features.concat(Object.keys(annotations))
                     })
 
@@ -531,30 +528,26 @@
         }
 
         function load_video_dragged(event) {
-            console.log("DRAGGED");
             const file = this.files[0];
             app.video_info.length = file.duration;
-            console.log(app.video_info)
             const file_url = URL.createObjectURL(file);
             load_video_from_url(file_url);
 
             const form_data = new FormData();
-            console.log("hello");
             form_data.append('video', file);
             form_data.append('language', app.selectedLanguageCode);
 
             var json = null;
-
+            // https://videotorial-backend-dot-videotorial.ew.r.appspot.com/upload
             $.ajax({
                 async: false,
-                url: 'http://localhost:3000/upload',
+                url: 'https://videotorial-backend-dot-videotorial.ew.r.appspot.com/upload',
                 method: 'POST',
                 data: form_data,
                 processData: false,
                 contentType: false,
                 dataType: 'json',
                 success: function (data) {
-                    console.log("hi: ", data);
                     json = data;
                 },
                 error: function (error) {
@@ -563,7 +556,6 @@
             });
             json_data = json
 
-            console.log("json_data: ", json_data);
             app.json_data = json_data
         }
 
@@ -581,7 +573,6 @@
 
             app.json_data = json_data
 
-            console.log('keys ->>', Object.keys(json_data))
             // check validity of json
             if (!('annotation_results' in json_data)) {
                 alert("❌ Format of json is not compatible, make sure you are setting the 'output_uri' \
@@ -605,7 +596,6 @@ Find links to script examples at the top right of the screen.")
         const json_input = document.getElementById('json_input')
 
         video.oncanplay = function () {
-            console.log("Can start playing video", video.duration, video.videoHeight, video.videoWidth)
             app.video_info.length = video.duration
             app.video_length.duration
             app.video_info.height = 500
@@ -617,7 +607,6 @@ Find links to script examples at the top right of the screen.")
         }
 
         function drop_video(ev) {
-            console.log("hello drop video")
             ev.preventDefault()
             video_input.files = ev.dataTransfer.files
             video_input.dispatchEvent(new Event('change'))

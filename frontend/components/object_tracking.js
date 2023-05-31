@@ -1,5 +1,3 @@
-console.log('IMPORTING OBJECT TRACKING')
-
 var style = document.createElement('style');
 style.innerHTML = `
 
@@ -202,8 +200,7 @@ Vue.component('object-tracking-viz', {
     </div>
     `,
 
-     mounted: function () {
-        console.log('mounted component')
+    mounted: function () {
         var canvas = document.getElementById("my_canvas")
         this.ctx = canvas.getContext("2d")
         this.ctx.font = "20px Roboto"
@@ -212,14 +209,12 @@ Vue.component('object-tracking-viz', {
         const component = this
 
         this.interval_timer = setInterval(function () {
-            console.log('running')
             const object_tracks = component.indexed_object_tracks
 
             draw_bounding_boxes(object_tracks, ctx)
         }, 1000 / 30)
     },
     beforeDestroy: function () {
-        console.log('destroying component')
         clearInterval(this.interval_timer)
         this.ctx.clearRect(0, 0, 800, 500)
     }
@@ -302,5 +297,5 @@ class Object_Track {
             return this.most_recent_interpolated_bounding_box(seconds)
         else
             return this.most_recent_real_bounding_box(seconds)
-    } 
+    }
 }

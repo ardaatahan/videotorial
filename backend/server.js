@@ -2,7 +2,7 @@ const express = require('express');
 const multer = require('multer');
 const cors = require('cors');
 const videoAnalysis = require('./VideoAnalysis');
-const { translateText } = require('./translate');
+const { translateText } = require('./Translate');
 
 const app = express();
 const upload = multer();
@@ -24,11 +24,11 @@ app.post('/upload', upload.single('video'), async (req, res) => {
     for (let index = 0; index < videoResult.annotationResults.length; index++) {
       if ('speechTranscriptions' in videoResult.annotationResults[index])
         var speech = videoResult.annotationResults[index].speechTranscriptions;
-        for (const transcription of speech) {
-          for (const alternative of transcription.alternatives) {
-            transcriptString += alternative.transcript + ' ';
-          }
+      for (const transcription of speech) {
+        for (const alternative of transcription.alternatives) {
+          transcriptString += alternative.transcript + ' ';
         }
+      }
     }
 
     console.log("transcript: ", transcriptString);
@@ -36,11 +36,11 @@ app.post('/upload', upload.single('video'), async (req, res) => {
     // Translate the transcript string
     if (transcriptString) {
       // Translate the transcript string
-      const targetLanguage = selectedLanguageCode === '' ? 'tr': selectedLanguageCode;
+      const targetLanguage = selectedLanguageCode === '' ? 'tr' : selectedLanguageCode;
       console.log("target: ", targetLanguage);
       translatedText = await translateText(transcriptString, targetLanguage);
     }
-    
+
     // Prepare the response data
     const response = {
       videoJSON: videoResult,
