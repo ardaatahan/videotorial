@@ -227,12 +227,13 @@
         .custom-file-upload:hover {
             background-color: #5C6BC0;
         }
+
         .dropdown {
             position: relative;
             display: inline-block;
-          }
-          
-          .dropdown select {
+        }
+
+        .dropdown select {
             padding: 8px 16px;
             font-size: 14px;
             border: 1px solid #ccc;
@@ -241,15 +242,15 @@
             color: #333;
             outline: none;
             appearance: none;
-          }
-          
-          .dropdown select:focus {
+        }
+
+        .dropdown select:focus {
             border-color: #888;
-          }
-          
-          .dropdown select option {
+        }
+
+        .dropdown select option {
             padding: 8px 16px;
-          }
+        }
     </style>
 </head>
 
@@ -295,10 +296,11 @@
                             </div>
                             <div class="dropdown">
                                 <select v-model="selectedLanguageCode">
-                                  <option value="" disabled>Select a language</option>
-                                  <option v-for="language in languageCodes" :value="language.code" :key="language.code">{{ language.label }}</option>
+                                    <option value="" disabled>Select a language</option>
+                                    <option v-for="language in languageCodes" :value="language.code"
+                                        :key="language.code">{{ language.label }}</option>
                                 </select>
-                              </div>
+                            </div>
                         </div>
                     </div>
 
@@ -448,7 +450,7 @@
                     { code: 'tr', label: 'Turkish' },
                     { code: 'uk', label: 'Ukranian' }
                 ],
-                selectedLanguageCode: '', // Initially set to an empty string
+                selectedLanguageCode: 'tr', // Initially set to an empty string
                 json_data: {},
                 video_info: { width: 800, height: 500, length: 252 },
                 video_length: 252,
@@ -525,6 +527,8 @@
         function load_video_dragged(event) {
             console.log("DRAGGED");
             const file = this.files[0];
+            app.video_info.length = file.duration;
+            console.log(app.video_info)
             const file_url = URL.createObjectURL(file);
             load_video_from_url(file_url);
 
