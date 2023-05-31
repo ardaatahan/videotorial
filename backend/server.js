@@ -12,7 +12,9 @@ app.use(cors());
 
 app.post('/upload', upload.single('video'), async (req, res) => {
   const videoFile = req.file; // Access the uploaded video file from req.file
+  const selectedLanguageCode = req.body.language; // Access the selected language code from req.body
 
+  console.log(selectedLanguageCode);
   console.log(videoFile);
   try {
     // Perform video analysis using videoIntelligence.js
@@ -29,9 +31,15 @@ app.post('/upload', upload.single('video'), async (req, res) => {
         }
     }
 
+    console.log("transcript: ", transcriptString);
+    var translatedText = ''
     // Translate the transcript string
-    const targetLanguage = 'tr';
-    const translatedText = await translateText(transcriptString, targetLanguage);
+    if (transcriptString) {
+      // Translate the transcript string
+      const targetLanguage = selectedLanguageCode === '' ? 'tr': selectedLanguageCode;
+      console.log("target: ", targetLanguage);
+      translatedText = await translateText(transcriptString, targetLanguage);
+    }
     
     // Prepare the response data
     const response = {
