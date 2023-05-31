@@ -5,18 +5,16 @@ style.innerHTML = `
 
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
-.segment-timeline {
-    width: 100%;
-    position: relative; 
-    height: 1em;
-}
+// .segment-timeline{
+    
+// }
 
-.segment-container {
+.segment-container{
     text-align: center;
     margin:10px;
 }
 
-.segment {
+.segment{
     position: absolute; 
     background-color: #4285F4;
     height: 1em;
@@ -25,7 +23,7 @@ style.innerHTML = `
     cursor: pointer;
 }
 
-.label {
+.label{
     display: inline-block;
     background-color:  #4285F4;
     color: white;
@@ -37,7 +35,13 @@ style.innerHTML = `
     border-radius: 5px;
 }
 
-.segment-timeline {
+
+
+.segment-timeline{
+    width: 100%;
+    position: relative; 
+    height: 1em;
+
     display: inline-block;
     vertical-align: middle;
     width: 80%;
@@ -46,7 +50,10 @@ style.innerHTML = `
     border-radius: 5px;
 }
 
-.segments-enter-active, .segments-leave-active , .segment-container {
+
+
+
+.segments-enter-active, .segments-leave-active , .segment-container{
     transition: all 0.2s;
   }
 
@@ -162,7 +169,8 @@ Vue.component('object-tracking-viz', {
         segment_style: function (segment) {
             return {
                 left: ((segment[0] / this.video_info.length) * 100).toString() + '%',
-                width: (((segment[1] - segment[0]) / this.video_info.length) * 100).toString() + '%'
+                width: (((segment[1] - segment[0]) / this.video_info.length) * 100).toString() + '%',
+                // display: segment[0] > this.video_info.length ? 'none' : 'normal'
             }
         },
         segment_clicked: function (segment_data) {
@@ -171,7 +179,6 @@ Vue.component('object-tracking-viz', {
     },
     template: `
     <div class="object-tracking-container">
-        <p>{{object_track_segments}}</p>
         <div class="confidence">
             <span>Confidence threshold</span>
             <input type="range" min="0.0" max="1" value="0.5" step="0.01" v-model="confidence_threshold">

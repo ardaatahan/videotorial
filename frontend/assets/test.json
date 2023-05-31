@@ -1,0 +1,1325 @@
+{
+    "videoJSON": {
+        "annotationResults": [
+            {
+                "segmentLabelAnnotations": [
+                    {
+                        "entity": {
+                            "entityId": "/m/021mp2",
+                            "description": "sedan",
+                            "languageCode": "en-US"
+                        },
+                        "categoryEntities": [
+                            {
+                                "entityId": "/m/0k4j",
+                                "description": "car",
+                                "languageCode": "en-US"
+                            }
+                        ],
+                        "segments": [
+                            {
+                                "segment": {
+                                    "startTimeOffset": {},
+                                    "endTimeOffset": {
+                                        "seconds": "2",
+                                        "nanos": 168833000
+                                    }
+                                },
+                                "confidence": 0.777330756187439
+                            }
+                        ]
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/03vnt4",
+                            "description": "mid size car",
+                            "languageCode": "en-US"
+                        },
+                        "categoryEntities": [
+                            {
+                                "entityId": "/m/0k4j",
+                                "description": "car",
+                                "languageCode": "en-US"
+                            }
+                        ],
+                        "segments": [
+                            {
+                                "segment": {
+                                    "startTimeOffset": {},
+                                    "endTimeOffset": {
+                                        "seconds": "2",
+                                        "nanos": 168833000
+                                    }
+                                },
+                                "confidence": 0.3061675429344177
+                            }
+                        ]
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/07yv9",
+                            "description": "vehicle",
+                            "languageCode": "en-US"
+                        },
+                        "segments": [
+                            {
+                                "segment": {
+                                    "startTimeOffset": {},
+                                    "endTimeOffset": {
+                                        "seconds": "2",
+                                        "nanos": 168833000
+                                    }
+                                },
+                                "confidence": 0.9893714189529419
+                            }
+                        ]
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/012f08",
+                            "description": "motor vehicle",
+                            "languageCode": "en-US"
+                        },
+                        "categoryEntities": [
+                            {
+                                "entityId": "/m/07yv9",
+                                "description": "vehicle",
+                                "languageCode": "en-US"
+                            }
+                        ],
+                        "segments": [
+                            {
+                                "segment": {
+                                    "startTimeOffset": {},
+                                    "endTimeOffset": {
+                                        "seconds": "2",
+                                        "nanos": 168833000
+                                    }
+                                },
+                                "confidence": 0.9511903524398804
+                            }
+                        ]
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/088l6h",
+                            "description": "family car",
+                            "languageCode": "en-US"
+                        },
+                        "categoryEntities": [
+                            {
+                                "entityId": "/m/0k4j",
+                                "description": "car",
+                                "languageCode": "en-US"
+                            }
+                        ],
+                        "segments": [
+                            {
+                                "segment": {
+                                    "startTimeOffset": {},
+                                    "endTimeOffset": {
+                                        "seconds": "2",
+                                        "nanos": 168833000
+                                    }
+                                },
+                                "confidence": 0.3715141713619232
+                            }
+                        ]
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/03vntj",
+                            "description": "full size car",
+                            "languageCode": "en-US"
+                        },
+                        "categoryEntities": [
+                            {
+                                "entityId": "/m/0k4j",
+                                "description": "car",
+                                "languageCode": "en-US"
+                            }
+                        ],
+                        "segments": [
+                            {
+                                "segment": {
+                                    "startTimeOffset": {},
+                                    "endTimeOffset": {
+                                        "seconds": "2",
+                                        "nanos": 168833000
+                                    }
+                                },
+                                "confidence": 0.4662196636199951
+                            }
+                        ]
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/0k4j",
+                            "description": "car",
+                            "languageCode": "en-US"
+                        },
+                        "categoryEntities": [
+                            {
+                                "entityId": "/m/07yv9",
+                                "description": "vehicle",
+                                "languageCode": "en-US"
+                            }
+                        ],
+                        "segments": [
+                            {
+                                "segment": {
+                                    "startTimeOffset": {},
+                                    "endTimeOffset": {
+                                        "seconds": "2",
+                                        "nanos": 168833000
+                                    }
+                                },
+                                "confidence": 0.8824054598808289
+                            }
+                        ]
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/01prls",
+                            "description": "land vehicle",
+                            "languageCode": "en-US"
+                        },
+                        "categoryEntities": [
+                            {
+                                "entityId": "/m/07yv9",
+                                "description": "vehicle",
+                                "languageCode": "en-US"
+                            }
+                        ],
+                        "segments": [
+                            {
+                                "segment": {
+                                    "startTimeOffset": {},
+                                    "endTimeOffset": {
+                                        "seconds": "2",
+                                        "nanos": 168833000
+                                    }
+                                },
+                                "confidence": 0.9802144169807434
+                            }
+                        ]
+                    }
+                ],
+                "shotLabelAnnotations": [
+                    {
+                        "entity": {
+                            "entityId": "/m/021mp2",
+                            "description": "sedan",
+                            "languageCode": "en-US"
+                        },
+                        "categoryEntities": [
+                            {
+                                "entityId": "/m/0k4j",
+                                "description": "car",
+                                "languageCode": "en-US"
+                            }
+                        ],
+                        "segments": [
+                            {
+                                "segment": {
+                                    "startTimeOffset": {},
+                                    "endTimeOffset": {
+                                        "seconds": "2",
+                                        "nanos": 168833000
+                                    }
+                                },
+                                "confidence": 0.777330756187439
+                            }
+                        ]
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/03vnt4",
+                            "description": "mid size car",
+                            "languageCode": "en-US"
+                        },
+                        "categoryEntities": [
+                            {
+                                "entityId": "/m/0k4j",
+                                "description": "car",
+                                "languageCode": "en-US"
+                            }
+                        ],
+                        "segments": [
+                            {
+                                "segment": {
+                                    "startTimeOffset": {},
+                                    "endTimeOffset": {
+                                        "seconds": "2",
+                                        "nanos": 168833000
+                                    }
+                                },
+                                "confidence": 0.3061675429344177
+                            }
+                        ]
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/07yv9",
+                            "description": "vehicle",
+                            "languageCode": "en-US"
+                        },
+                        "segments": [
+                            {
+                                "segment": {
+                                    "startTimeOffset": {},
+                                    "endTimeOffset": {
+                                        "seconds": "2",
+                                        "nanos": 168833000
+                                    }
+                                },
+                                "confidence": 0.9893714189529419
+                            }
+                        ]
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/012f08",
+                            "description": "motor vehicle",
+                            "languageCode": "en-US"
+                        },
+                        "categoryEntities": [
+                            {
+                                "entityId": "/m/07yv9",
+                                "description": "vehicle",
+                                "languageCode": "en-US"
+                            }
+                        ],
+                        "segments": [
+                            {
+                                "segment": {
+                                    "startTimeOffset": {},
+                                    "endTimeOffset": {
+                                        "seconds": "2",
+                                        "nanos": 168833000
+                                    }
+                                },
+                                "confidence": 0.9511903524398804
+                            }
+                        ]
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/088l6h",
+                            "description": "family car",
+                            "languageCode": "en-US"
+                        },
+                        "categoryEntities": [
+                            {
+                                "entityId": "/m/0k4j",
+                                "description": "car",
+                                "languageCode": "en-US"
+                            }
+                        ],
+                        "segments": [
+                            {
+                                "segment": {
+                                    "startTimeOffset": {},
+                                    "endTimeOffset": {
+                                        "seconds": "2",
+                                        "nanos": 168833000
+                                    }
+                                },
+                                "confidence": 0.3715141713619232
+                            }
+                        ]
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/03vntj",
+                            "description": "full size car",
+                            "languageCode": "en-US"
+                        },
+                        "categoryEntities": [
+                            {
+                                "entityId": "/m/0k4j",
+                                "description": "car",
+                                "languageCode": "en-US"
+                            }
+                        ],
+                        "segments": [
+                            {
+                                "segment": {
+                                    "startTimeOffset": {},
+                                    "endTimeOffset": {
+                                        "seconds": "2",
+                                        "nanos": 168833000
+                                    }
+                                },
+                                "confidence": 0.4662196636199951
+                            }
+                        ]
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/0k4j",
+                            "description": "car",
+                            "languageCode": "en-US"
+                        },
+                        "categoryEntities": [
+                            {
+                                "entityId": "/m/07yv9",
+                                "description": "vehicle",
+                                "languageCode": "en-US"
+                            }
+                        ],
+                        "segments": [
+                            {
+                                "segment": {
+                                    "startTimeOffset": {},
+                                    "endTimeOffset": {
+                                        "seconds": "2",
+                                        "nanos": 168833000
+                                    }
+                                },
+                                "confidence": 0.8824054598808289
+                            }
+                        ]
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/01prls",
+                            "description": "land vehicle",
+                            "languageCode": "en-US"
+                        },
+                        "categoryEntities": [
+                            {
+                                "entityId": "/m/07yv9",
+                                "description": "vehicle",
+                                "languageCode": "en-US"
+                            }
+                        ],
+                        "segments": [
+                            {
+                                "segment": {
+                                    "startTimeOffset": {},
+                                    "endTimeOffset": {
+                                        "seconds": "2",
+                                        "nanos": 168833000
+                                    }
+                                },
+                                "confidence": 0.9802144169807434
+                            }
+                        ]
+                    }
+                ],
+                "segment": {
+                    "startTimeOffset": {},
+                    "endTimeOffset": {
+                        "seconds": "2",
+                        "nanos": 168833000
+                    }
+                },
+                "objectAnnotations": [
+                    {
+                        "entity": {
+                            "entityId": "/m/0k4j",
+                            "description": "car",
+                            "languageCode": "en-US"
+                        },
+                        "frames": [
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.13920514285564423,
+                                    "top": 0.4124823212623596,
+                                    "right": 0.5926547646522522,
+                                    "bottom": 0.6269626617431641
+                                },
+                                "timeOffset": {}
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.14351189136505127,
+                                    "top": 0.41316166520118713,
+                                    "right": 0.5962907075881958,
+                                    "bottom": 0.6270565390586853
+                                },
+                                "timeOffset": {
+                                    "nanos": 100100000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.14975972473621368,
+                                    "top": 0.4149220287799835,
+                                    "right": 0.6025375723838806,
+                                    "bottom": 0.6288160681724548
+                                },
+                                "timeOffset": {
+                                    "nanos": 200200000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.14541201293468475,
+                                    "top": 0.41326677799224854,
+                                    "right": 0.6185488104820251,
+                                    "bottom": 0.6372100114822388
+                                },
+                                "timeOffset": {
+                                    "nanos": 300300000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.19047610461711884,
+                                    "top": 0.41400018334388733,
+                                    "right": 0.6229381561279297,
+                                    "bottom": 0.6550923585891724
+                                },
+                                "timeOffset": {
+                                    "nanos": 400400000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.20411594212055206,
+                                    "top": 0.4182577133178711,
+                                    "right": 0.6322742104530334,
+                                    "bottom": 0.660395622253418
+                                },
+                                "timeOffset": {
+                                    "nanos": 500500000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.20765429735183716,
+                                    "top": 0.42172831296920776,
+                                    "right": 0.6354638934135437,
+                                    "bottom": 0.6639509201049805
+                                },
+                                "timeOffset": {
+                                    "nanos": 600600000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.20957088470458984,
+                                    "top": 0.42407485842704773,
+                                    "right": 0.6373513340950012,
+                                    "bottom": 0.6663045287132263
+                                },
+                                "timeOffset": {
+                                    "nanos": 700700000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.2275678664445877,
+                                    "top": 0.4155564308166504,
+                                    "right": 0.6363053321838379,
+                                    "bottom": 0.692419171333313
+                                },
+                                "timeOffset": {
+                                    "nanos": 800800000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.2306658923625946,
+                                    "top": 0.42137613892555237,
+                                    "right": 0.6373336911201477,
+                                    "bottom": 0.7008486986160278
+                                },
+                                "timeOffset": {
+                                    "nanos": 900900000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.2179373949766159,
+                                    "top": 0.4196041524410248,
+                                    "right": 0.6430986523628235,
+                                    "bottom": 0.7118546962738037
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 1000000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.2109670788049698,
+                                    "top": 0.42442137002944946,
+                                    "right": 0.6376751661300659,
+                                    "bottom": 0.7177407145500183
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 101100000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.20438626408576965,
+                                    "top": 0.4207082688808441,
+                                    "right": 0.6390758752822876,
+                                    "bottom": 0.7447465658187866
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 201200000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.19714510440826416,
+                                    "top": 0.4292072355747223,
+                                    "right": 0.6322885155677795,
+                                    "bottom": 0.7553397417068481
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 301300000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.18536719679832458,
+                                    "top": 0.4367707371711731,
+                                    "right": 0.6205488443374634,
+                                    "bottom": 0.7630800008773804
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 401400000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.16200602054595947,
+                                    "top": 0.4370308518409729,
+                                    "right": 0.6167014837265015,
+                                    "bottom": 0.7784286737442017
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 501500000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.08011028915643692,
+                                    "top": 0.42104655504226685,
+                                    "right": 0.6337156295776367,
+                                    "bottom": 0.8309167623519897
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 601600000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.045233104377985,
+                                    "top": 0.4309327006340027,
+                                    "right": 0.6065232157707214,
+                                    "bottom": 0.8463029861450195
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 701700000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.017634162679314613,
+                                    "top": 0.4422420561313629,
+                                    "right": 0.5796084403991699,
+                                    "bottom": 0.8581020832061768
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 801800000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.002889590570703149,
+                                    "top": 0.4479588270187378,
+                                    "right": 0.5649213790893555,
+                                    "bottom": 0.863860011100769
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 901900000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": -0.008690387941896915,
+                                    "top": 0.4288105368614197,
+                                    "right": 0.5784907937049866,
+                                    "bottom": 0.9327870607376099
+                                },
+                                "timeOffset": {
+                                    "seconds": "2",
+                                    "nanos": 2000000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": -0.0062391734682023525,
+                                    "top": 0.43483585119247437,
+                                    "right": 0.5630184412002563,
+                                    "bottom": 0.969465434551239
+                                },
+                                "timeOffset": {
+                                    "seconds": "2",
+                                    "nanos": 102100000
+                                }
+                            }
+                        ],
+                        "segment": {
+                            "startTimeOffset": {},
+                            "endTimeOffset": {
+                                "seconds": "2",
+                                "nanos": 102100000
+                            }
+                        },
+                        "confidence": 0.9962056279182434
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/0h9mv",
+                            "description": "tire",
+                            "languageCode": "en-US"
+                        },
+                        "frames": [
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.14941947162151337,
+                                    "top": 0.4080033302307129,
+                                    "right": 0.5889163017272949,
+                                    "bottom": 0.6332895755767822
+                                },
+                                "timeOffset": {
+                                    "nanos": 100100000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.1657928228378296,
+                                    "top": 0.40972596406936646,
+                                    "right": 0.6011171936988831,
+                                    "bottom": 0.6380671858787537
+                                },
+                                "timeOffset": {
+                                    "nanos": 200200000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.16634444892406464,
+                                    "top": 0.40985146164894104,
+                                    "right": 0.6016688346862793,
+                                    "bottom": 0.6381926536560059
+                                },
+                                "timeOffset": {
+                                    "nanos": 300300000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.16689608991146088,
+                                    "top": 0.40997692942619324,
+                                    "right": 0.6022204756736755,
+                                    "bottom": 0.6383181214332581
+                                },
+                                "timeOffset": {
+                                    "nanos": 400400000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.16744773089885712,
+                                    "top": 0.4101024270057678,
+                                    "right": 0.6027721166610718,
+                                    "bottom": 0.638443648815155
+                                },
+                                "timeOffset": {
+                                    "nanos": 500500000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.16799935698509216,
+                                    "top": 0.4102279245853424,
+                                    "right": 0.6033236980438232,
+                                    "bottom": 0.6385691165924072
+                                },
+                                "timeOffset": {
+                                    "nanos": 600600000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.1685509979724884,
+                                    "top": 0.410353422164917,
+                                    "right": 0.6038753986358643,
+                                    "bottom": 0.6386946439743042
+                                },
+                                "timeOffset": {
+                                    "nanos": 700700000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.16910263895988464,
+                                    "top": 0.4104788899421692,
+                                    "right": 0.6044269800186157,
+                                    "bottom": 0.6388201117515564
+                                },
+                                "timeOffset": {
+                                    "nanos": 800800000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.1696542650461197,
+                                    "top": 0.4106043875217438,
+                                    "right": 0.604978621006012,
+                                    "bottom": 0.6389455795288086
+                                },
+                                "timeOffset": {
+                                    "nanos": 900900000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.2298511415719986,
+                                    "top": 0.5966119170188904,
+                                    "right": 0.3078615665435791,
+                                    "bottom": 0.7173216938972473
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 1000000
+                                }
+                            }
+                        ],
+                        "segment": {
+                            "startTimeOffset": {
+                                "nanos": 100100000
+                            },
+                            "endTimeOffset": {
+                                "seconds": "1",
+                                "nanos": 1000000
+                            }
+                        },
+                        "confidence": 0.5341535210609436
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/083wq",
+                            "description": "wheel",
+                            "languageCode": "en-US"
+                        },
+                        "frames": [
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.29934316873550415,
+                                    "top": 0.5516050457954407,
+                                    "right": 0.3755949139595032,
+                                    "bottom": 0.6640037894248962
+                                },
+                                "timeOffset": {
+                                    "nanos": 500500000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.28534525632858276,
+                                    "top": 0.5505558252334595,
+                                    "right": 0.3628985583782196,
+                                    "bottom": 0.6689163446426392
+                                },
+                                "timeOffset": {
+                                    "nanos": 600600000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.2798725664615631,
+                                    "top": 0.5629162788391113,
+                                    "right": 0.3512916564941406,
+                                    "bottom": 0.6858844757080078
+                                },
+                                "timeOffset": {
+                                    "nanos": 700700000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.26687514781951904,
+                                    "top": 0.5738406181335449,
+                                    "right": 0.33818185329437256,
+                                    "bottom": 0.6972042918205261
+                                },
+                                "timeOffset": {
+                                    "nanos": 800800000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.25059202313423157,
+                                    "top": 0.5894331336021423,
+                                    "right": 0.32896023988723755,
+                                    "bottom": 0.7049084901809692
+                                },
+                                "timeOffset": {
+                                    "nanos": 900900000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.23874540627002716,
+                                    "top": 0.6014467477798462,
+                                    "right": 0.31711363792419434,
+                                    "bottom": 0.7169221043586731
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 1000000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.2116151750087738,
+                                    "top": 0.5983137488365173,
+                                    "right": 0.27946606278419495,
+                                    "bottom": 0.7299116253852844
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 101100000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.1900469958782196,
+                                    "top": 0.6057373881340027,
+                                    "right": 0.2578926682472229,
+                                    "bottom": 0.7424169182777405
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 201200000
+                                }
+                            }
+                        ],
+                        "segment": {
+                            "startTimeOffset": {
+                                "nanos": 500500000
+                            },
+                            "endTimeOffset": {
+                                "seconds": "1",
+                                "nanos": 201200000
+                            }
+                        },
+                        "confidence": 0.6038894057273865
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/0h9mv",
+                            "description": "tire",
+                            "languageCode": "en-US"
+                        },
+                        "frames": [
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.5603828430175781,
+                                    "top": 0.5977582335472107,
+                                    "right": 0.6328846216201782,
+                                    "bottom": 0.7204440236091614
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 1000000
+                                }
+                            }
+                        ],
+                        "segment": {
+                            "startTimeOffset": {
+                                "seconds": "1",
+                                "nanos": 1000000
+                            },
+                            "endTimeOffset": {
+                                "seconds": "1",
+                                "nanos": 1000000
+                            }
+                        },
+                        "confidence": 0.5227527022361755
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/01jfm_",
+                            "description": "license plate",
+                            "languageCode": "en-US"
+                        },
+                        "frames": [
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.38080114126205444,
+                                    "top": 0.657644510269165,
+                                    "right": 0.5223888158798218,
+                                    "bottom": 0.7164318561553955
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 101100000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.3438715934753418,
+                                    "top": 0.669228196144104,
+                                    "right": 0.5092111229896545,
+                                    "bottom": 0.7227838039398193
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 201200000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.318035751581192,
+                                    "top": 0.6923787593841553,
+                                    "right": 0.47614359855651855,
+                                    "bottom": 0.7463828921318054
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 301300000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.28571924567222595,
+                                    "top": 0.7126129269599915,
+                                    "right": 0.4472123980522156,
+                                    "bottom": 0.7632277011871338
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 401400000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.24477481842041016,
+                                    "top": 0.7344276905059814,
+                                    "right": 0.4098093509674072,
+                                    "bottom": 0.7866664528846741
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 501500000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.20628918707370758,
+                                    "top": 0.7556841969490051,
+                                    "right": 0.3806641101837158,
+                                    "bottom": 0.8073145151138306
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 601600000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.15340997278690338,
+                                    "top": 0.7777470350265503,
+                                    "right": 0.337649405002594,
+                                    "bottom": 0.8321028351783752
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 701700000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.09174071252346039,
+                                    "top": 0.8045444488525391,
+                                    "right": 0.28718510270118713,
+                                    "bottom": 0.8611406683921814
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 801800000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.02377314865589142,
+                                    "top": 0.8318797945976257,
+                                    "right": 0.21463198959827423,
+                                    "bottom": 0.8903895020484924
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 901900000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.000203574396437034,
+                                    "top": 0.8624047040939331,
+                                    "right": 0.11917529255151749,
+                                    "bottom": 0.9406093955039978
+                                },
+                                "timeOffset": {
+                                    "seconds": "2",
+                                    "nanos": 2000000
+                                }
+                            }
+                        ],
+                        "segment": {
+                            "startTimeOffset": {
+                                "seconds": "1",
+                                "nanos": 101100000
+                            },
+                            "endTimeOffset": {
+                                "seconds": "2",
+                                "nanos": 2000000
+                            }
+                        },
+                        "confidence": 0.705385148525238
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/083wq",
+                            "description": "wheel",
+                            "languageCode": "en-US"
+                        },
+                        "frames": [
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.5368719100952148,
+                                    "top": 0.6227743029594421,
+                                    "right": 0.6203479766845703,
+                                    "bottom": 0.7529096007347107
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 201200000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.15913353860378265,
+                                    "top": 0.6012333631515503,
+                                    "right": 0.21811389923095703,
+                                    "bottom": 0.7560683488845825
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 301300000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.12803253531455994,
+                                    "top": 0.6019192337989807,
+                                    "right": 0.18051624298095703,
+                                    "bottom": 0.7683603763580322
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 401400000
+                                }
+                            }
+                        ],
+                        "segment": {
+                            "startTimeOffset": {
+                                "seconds": "1",
+                                "nanos": 201200000
+                            },
+                            "endTimeOffset": {
+                                "seconds": "1",
+                                "nanos": 401400000
+                            }
+                        },
+                        "confidence": 0.6291891932487488
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/083wq",
+                            "description": "wheel",
+                            "languageCode": "en-US"
+                        },
+                        "frames": [
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.530468225479126,
+                                    "top": 0.6460534930229187,
+                                    "right": 0.6013531684875488,
+                                    "bottom": 0.7892470955848694
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 401400000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.5288524627685547,
+                                    "top": 0.6546011567115784,
+                                    "right": 0.5932967662811279,
+                                    "bottom": 0.8040820956230164
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 501500000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.5239612460136414,
+                                    "top": 0.6627740859985352,
+                                    "right": 0.5859125852584839,
+                                    "bottom": 0.8205028772354126
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 601600000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.4964289665222168,
+                                    "top": 0.6707735657691956,
+                                    "right": 0.5710400342941284,
+                                    "bottom": 0.8481794595718384
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 701700000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.4718925952911377,
+                                    "top": 0.6813468337059021,
+                                    "right": 0.5504372715950012,
+                                    "bottom": 0.8752503395080566
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 801800000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.436686635017395,
+                                    "top": 0.7115570902824402,
+                                    "right": 0.5275862216949463,
+                                    "bottom": 0.9014360904693604
+                                },
+                                "timeOffset": {
+                                    "seconds": "1",
+                                    "nanos": 901900000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.398370623588562,
+                                    "top": 0.7335413098335266,
+                                    "right": 0.4963626265525818,
+                                    "bottom": 0.9446019530296326
+                                },
+                                "timeOffset": {
+                                    "seconds": "2",
+                                    "nanos": 2000000
+                                }
+                            },
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.3549482226371765,
+                                    "top": 0.7585090398788452,
+                                    "right": 0.45905452966690063,
+                                    "bottom": 0.9828144907951355
+                                },
+                                "timeOffset": {
+                                    "seconds": "2",
+                                    "nanos": 102100000
+                                }
+                            }
+                        ],
+                        "segment": {
+                            "startTimeOffset": {
+                                "seconds": "1",
+                                "nanos": 401400000
+                            },
+                            "endTimeOffset": {
+                                "seconds": "2",
+                                "nanos": 102100000
+                            }
+                        },
+                        "confidence": 0.8851897120475769
+                    },
+                    {
+                        "entity": {
+                            "entityId": "/m/0h9mv",
+                            "description": "tire",
+                            "languageCode": "en-US"
+                        },
+                        "frames": [
+                            {
+                                "normalizedBoundingBox": {
+                                    "left": 0.5195895433425903,
+                                    "top": 0.5996702313423157,
+                                    "right": 0.5701802968978882,
+                                    "bottom": 0.7587864995002747
+                                },
+                                "timeOffset": {
+                                    "seconds": "2",
+                                    "nanos": 102100000
+                                }
+                            }
+                        ],
+                        "segment": {
+                            "startTimeOffset": {
+                                "seconds": "2",
+                                "nanos": 102100000
+                            },
+                            "endTimeOffset": {
+                                "seconds": "2",
+                                "nanos": 102100000
+                            }
+                        },
+                        "confidence": 0.7727295160293579
+                    }
+                ]
+            },
+            {
+                "segment": {
+                    "startTimeOffset": {},
+                    "endTimeOffset": {
+                        "seconds": "2",
+                        "nanos": 182675000
+                    }
+                },
+                "speechTranscriptions": [
+                    {
+                        "alternatives": [
+                            {}
+                        ],
+                        "languageCode": "en-us"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -170,6 +170,7 @@
         .content-container {
             flex: 1;
             display: flex;
+            width: 1600px;
             /* overflow: hidden; */
         }
 
@@ -341,8 +342,6 @@
     <script src="components/explicit_content_detection.js"></script>
 
     <script>
-        // import jsonData from "./assets/test_json.json";
-
         function jump_video_to_time(time) {
             const video = document.querySelector('video')
             video.currentTime = time
